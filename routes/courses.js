@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
       title: 'Курсы',
       isCourses: true,
       userId: req.user ? req.user._id.toString(): null, 
-      courses
+      courses,
     })
   } catch (error) {
     console.log(error)

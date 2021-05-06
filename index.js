@@ -16,6 +16,7 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 const authRoutes = require('./routes/auth')
 const User = require('./models/user')
 const varMiddleware = require('./middleware/variables')
+const fileMiddleware = require('./middleware/file')
 const userMiddleware = require('./middleware/user')
 
 const MONGODB_URI = "mongodb+srv://kuba:HZNatTQKIZIspRIL@cluster0.hjuuw.mongodb.net/blog";
@@ -43,6 +44,7 @@ app.use(session({
   saveUninitialized: false,
   store
 }))
+app.use(fileMiddleware.single('avatar'))
 app.use(scrf())
 app.use(flash())
 app.use(varMiddleware)
