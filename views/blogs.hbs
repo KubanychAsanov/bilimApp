@@ -1,0 +1,45 @@
+<h3>Blogs</h3>
+
+{{#if blogs.length}}
+<div class="row">
+  {{#each blogs}}
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-author">
+
+        {{#if userId.avatarUrl}}
+        <p> <img src="/{{userId.avatarUrl}}" alt="Profile" class="profile"> {{userId.name}} {{userId.surname}}</p>
+        {{else}}
+        <p> <img src="/assets/noProfile.png" alt="Profile" class="profile"> {{userId.name}} {{userId.surname}}</p>
+
+        {{/if}}
+
+      </div>
+      <div class="card-image">
+        <img src="{{img}}" alt="{{title}}">
+      </div>
+      <div class="card-content">
+        <a href="/blogs/{{id}}" class="content-title">{{title}}</a>
+        <p class="description">{{desc}}</p>
+      </div>
+      <div class="card-action actions">
+        <a href="/blogs/{{id}}">Read more</a>
+        {{#if @root.isAuth}}
+
+
+        {{#ifeq userId._id @root.userId}}
+        <a href="/blogs/{{id}}/edit?allow=true">Edit</a>
+        {{/ifeq}}
+
+        <span class="iconify" style="width: 24px; height: 24px;" data-icon="mdi:bookmark-outline"
+          data-inline="false"></span>
+
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{else}}
+<p>No any blogs</p>
+{{/if}}
