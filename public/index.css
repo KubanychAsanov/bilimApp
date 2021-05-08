@@ -1,31 +1,77 @@
+body{
+  background: #f0f4f7;
+  font-family: "Montserrat", sans-serif;
+  min-height: 400px;
+}
+.nav-wrapper .active a{
+  color: #2ebaee;
+}
+.nav-wrapper .a:hover {
+  text-decoration: none;
+  color: #2ebaee;
+}
 .nav-wrapper {
-  padding: 0 2rem;
+  width: 100%;
+    padding: 0 3rem;
+}
+.linkedIn-logo{
+  padding: 20px;
+}
+
+img{
+  max-height: 300px;
+}
+
+.card-author{
+  font-size: 13px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.content-title{
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 15px;
 }
 
-.course {
+.auth-form{
+  text-align: center;
+  margin: 100px;
+}
+
+.edit-form{
+  padding: 100px ;
+}
+
+.blog_item{
+  padding: 0px 300px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.course h1 {
+.blog_item h4{
   margin-bottom: 2rem;
 }
 
-.course img {
+.blog_item img{
   max-width: 600px;
   height: auto;
+  margin-bottom: 2rem;
+}
+.blog_item .description{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-.course .price.big {
-  font-size: 2.5rem;
+.blog_item .content{
+  font-size: 21px;
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
 }
-
 .card-action.actions {
   display: flex;
   align-items: center;
@@ -46,4 +92,62 @@
 .avatar {
   max-width: 300px;
   height: auto;
-}   
+} 
+.profile {
+  vertical-align: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+} 
+.add-session{
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+}
+.btn-primary{
+  background-color: blue;
+  position: absolute;
+  right: 50px;
+}
+.btn.edit{
+  position: absolute;
+  right: 200px;
+}
+.footer {
+  display: block;
+  padding: 1px 0;
+  position: relative;
+  color: #adb5bd;
+  font-size: 15px;
+}
+.footer h3{
+  font-size: 25px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.social-icons{
+list-style-type: none;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+footer .icon{
+font-size: 20px;
+color: #6c757d;
+margin-right: 20px;
+}
+hr{
+margin-top: 0;
+margin-bottom: 0;
+border: 0;
+border-top: 1px solid #495057;
+}
+.footer.footer-bar{
+padding: 20px 0;
+}
+.form-group, .input-field{
+  font-size: 19px;
+}
+.label-text{
+  font-size: 15px;
+}
