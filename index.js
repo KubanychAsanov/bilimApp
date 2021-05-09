@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const scrf = require('csurf')
+// const scrf = require('csurf')
 const flash = require('connect-flash')
 const mongoose = require('mongoose')
 const session = require('express-session')
@@ -13,9 +13,12 @@ const profileRoutes = require('./routes/profile')
 const blogsRoutes = require('./routes/blogs')
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 const authRoutes = require('./routes/auth')
+const apiRoutes = require('./routes/api')
 const varMiddleware = require('./middleware/variables')
 const fileMiddleware = require('./middleware/file')
 const userMiddleware = require('./middleware/user')
+const swaggerUi = require('swagger-ui-express')
+swaggerDocument = require('./swagger.json');
 
 const MONGODB_URI = "mongodb+srv://kuba:HZNatTQKIZIspRIL@cluster0.hjuuw.mongodb.net/blog";
 const app = express()
@@ -44,7 +47,7 @@ app.use(session({
   store
 }))
 app.use(fileMiddleware.single('avatar'))
-app.use(scrf())
+// app.use(scrf())
 app.use(flash())
 app.use(varMiddleware)
 app.use(userMiddleware)
@@ -54,6 +57,8 @@ app.use('/add', addRoutes)
 app.use('/blogs', blogsRoutes)
 app.use('/auth', authRoutes)
 app.use('/profile', profileRoutes)
+app.use('/api', apiRoutes)
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const PORT = process.env.PORT || 3000
 

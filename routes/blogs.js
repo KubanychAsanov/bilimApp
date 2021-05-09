@@ -53,7 +53,6 @@ router.get('/:id/edit', auth, async (req, res) => {
   } catch (e) {
     console.log(e)
   }
-
 })
 
 router.post('/edit', auth, async (req, res) => {

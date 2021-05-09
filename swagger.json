@@ -1,0 +1,176 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My Blogs Project CRUD",
+        "description": "This is a simple CRUD API application made with Express and documented with Swagger",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "paths": {
+        "/api/blogs": {
+            "get": {
+                "tags": [
+                    "Blogs"
+                ],
+                "summary": "Get all blogs in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Blogs"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/blogs/{id}": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Get blog by unique id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "ID of user that we want to find",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Blog"
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of blog that we want to find",
+                    "type": "string"
+                }
+            ],
+            "put": {
+                "summary": "Update blog with given ID",
+                "tags": [
+                    "Blog"
+                ],
+                "parameters": [
+                    {
+                        "name": "blog",
+                        "in": "body",
+                        "description": "Blog with new values of properties",
+                        "schema": {
+                            "$ref": "#/definitions/updateBlog"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Blog is updated",
+                        "schema": {
+                            "$ref": "#/definitions/Blog"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete blog with given ID",
+                "tags": [
+                    "Blog"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Blog is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Blog"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/add": {
+            "post": {
+                "tags": [
+                    "Adding new blog"
+                ],
+                "summary": "Create new blog in system",
+                "parameters": [
+                    {
+                        "name": "blog",
+                        "in": "body",
+                        "description": "Blog that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Blog"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New blog is created",
+                        "schema": {
+                            "$ref": "#/definitions/Blog"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Blog": {
+            "type": "object",
+            "required": [
+                "title",
+                "desc",
+                "content"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "img": {
+                    "type": "string"
+                }
+            }
+        },
+        "Blogs": {
+            "type": "array",
+            "$ref": "#/definitions/Blog"
+        },
+        "updateBlog": {
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "img": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
