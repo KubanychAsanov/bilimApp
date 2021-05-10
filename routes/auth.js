@@ -14,7 +14,7 @@ router.get('/login', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const {email, password} = req.body
+    const { email, password } = req.body
     const candidate = await User.findOne({ email })
 
     if (candidate) {
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
   } catch (e) {
     console.log(e)
   }
-}) 
+})
 
 router.get('/logout', async (req, res) => {
   req.session.destroy(() => {
@@ -50,7 +50,7 @@ router.get('/logout', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   try {
-    const { email, password, repeat, name, surname, profile} = req.body
+    const { email, password, repeat, name, surname, profile } = req.body
     const candidate = await User.findOne({ email })
 
     if (candidate) {
@@ -59,7 +59,7 @@ router.post('/register', async (req, res) => {
     } else {
       const hashPassword = await bcrypt.hashSync(password, 10)
       const user = new User({
-        email, password: hashPassword, name, surname, profile, cart: { items: [] }
+        email, password: hashPassword, name, surname, profile
       })
       await user.save()
       res.redirect('/auth/login#login')
