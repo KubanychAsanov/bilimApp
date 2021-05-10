@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const Blog = require('../models/blog')
 const auth = require('../middleware/auth')
+var moment = require('moment'); // require
 const router = Router()
 
 router.get('/', auth, (req, res) => {
@@ -17,6 +18,7 @@ router.post('/', auth, async (req, res) => {
     content: req.body.content,
     img: req.body.img,
     userId: req.user,
+    dateAdded: moment(new Date()).format("DD.MM.YYYY")
   })
 
   try {

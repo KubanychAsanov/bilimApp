@@ -2,6 +2,10 @@ body{
   background: #f0f4f7;
   font-family: "Montserrat", sans-serif;
   min-height: 400px;
+  overflow-x:hidden
+}
+.logo{
+  width: 60px;
 }
 .nav-wrapper .active a{
   color: #2ebaee;
@@ -22,27 +26,61 @@ img{
   max-height: 300px;
 }
 
+.main-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 270px;
+  margin: auto;
+  text-align: center;
+}
+.main-title {
+  color: grey;
+  font-size: 17px;
+}
+.main-card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  padding: 10px;
+}
+
+.main-card a:hover {
+  opacity: 0.7;
+}
+
+.card{
+  margin: 0%; 
+  padding: 0%;
+}
+
+.card-img{
+  width: 100%;
+}
+
 .card-author{
   font-size: 13px;
-  padding-top: 5px;
-  padding-left: 5px;
 }
 
 .content-title{
-  font-size: 17px;
+  font-size: 16px;
+  color: black;
   font-weight: bold;
 }
 
 .description {
   font-size: 15px;
+  color: mu;
 }
 
 .auth-form{
+  position: relative;
   text-align: center;
-  margin: 100px;
+  padding: 0px 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 .edit-form{
+  position: relative;
   padding: 100px ;
 }
 
@@ -76,6 +114,7 @@ img{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0%;
 }
 
 .course-form{
@@ -93,16 +132,21 @@ img{
   max-width: 300px;
   height: auto;
 } 
+
+.profile-page{
+  text-align: center;
+}
 .profile {
   vertical-align: center;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 } 
 .add-session{
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 100px;
+  position: relative;
 }
 .btn-primary{
   background-color: blue;
@@ -151,3 +195,86 @@ padding: 20px 0;
 .label-text{
   font-size: 15px;
 }
+.mobNav{
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  [class*="col-"] {
+    width: 100%;
+  } 
+    
+  .logo{
+    width: 50px;
+  }
+
+  nav .brand-logo{
+      font-size: 1.5rem;
+  }
+  /* body{
+      font-size: 80%;
+  } */
+  h4{
+      font-size: 1.5rem;
+  }
+
+  .avatar {
+    max-width: 250px;
+    max-height: auto;
+    padding-bottom: 20px;
+  } 
+
+  .nav-desc{
+    display: none;
+  }
+  .csstoggle{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    left: 0;
+    top: 0;
+  }
+  .csstoggle ul li {
+    margin: 0;
+    padding: 20px;
+    display: block;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  .add-session, .edit-form{
+    padding:0%;
+    padding-bottom: 80px;
+  }
+  .blog_item{
+    padding: 20px;  
+  }
+
+  .mobNav{
+    display: block;
+    z-index: 4;
+  }
+  .auth-form{
+    position: relative;
+    text-align: center;
+    padding: 30px 0px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  [class*="col-"] {
+    width: 100%;
+  } 
+}
+
+@media only screen and (min-width: 768px) {
+  .card{
+    width: 740px; 
+    margin: 0%; 
+    max-height: 250px;
+  }
+}
+

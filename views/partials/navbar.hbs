@@ -1,42 +1,49 @@
 <nav>
   <div class="nav-wrapper bg-dark">
-    <img src="/assets/bilimApp.png" width="60" style="vertical-align:middle" alt="Logo of University">
+    <img src="/assets/bilimApp.png" class="logo" alt="Logo">
     <a href="/" class="brand-logo">BilimApp</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul id="nav-mobile" class="right">
+      <div class="nav-desc" id="main-menu">
+        {{#if isHome}}
+        <li class="active"><a href="/">Main</a></li>
+        {{else}}
+        <li><a href="/">Main</a></li>
+        {{/if}}
 
-      {{#if isHome}}
-      <li class="active"><a href="/">Main</a></li>
-      {{else}}
-      <li><a href="/">Main</a></li>
-      {{/if}}
+        {{#if isBlogs}}
+        <li class="active"><a href="/blogs">Blogs</a></li>
+        {{else}}
+        <li><a href="/blogs">Blogs</a></li>
+        {{/if}}
 
-      {{#if isBlogs}}
-      <li class="active"><a href="/blogs">Blogs</a></li>
-      {{else}}
-      <li><a href="/blogs">Blogs</a></li>
-      {{/if}}
+        {{#if isAuth}}
+        {{#if isAdd}}
+        <li class="active"><a href="/add">Write blog</a></li>
+        {{else}}
+        <li><a href="/add">Write blog</a></li>
+        {{/if}}
 
-      {{#if isAuth}}
-      {{#if isAdd}}
-      <li class="active"><a href="/add">Write blog</a></li>
-      {{else}}
-      <li><a href="/add">Write blog</a></li>
-      {{/if}}
+        {{#if isProfile}}
+        <li class="active"><a href="/profile">Profile</a></li>
+        {{else}}
+        <li><a href="/profile">Profile</a></li>
+        {{/if}}
 
-      {{#if isProfile}}
-      <li class="active"><a href="/profile">Profile</a></li>
-      {{else}}
-      <li><a href="/profile">Profile</a></li>
-      {{/if}}
+        <li><a href="/auth/logout">Logout</a></li>
+        {{else}}
+        {{#if isLogin}}
+        <li class="active"><a href="/auth/login#login">Login</a></li>
+        {{else}}
+        <li><a href="/auth/login#login">Login</a></li>
+        {{/if}}
+        {{/if}}
+      </div>
+      <div>
+        <li><a class="mobNav" id="toggle-menu" onclick="openmenu()">
+            <i class="fa fa-bars" style="color: #fff; font-size: large"></i>
+          </a></li>
 
-      <li><a href="/auth/logout">Logout</a></li>
-      {{else}}
-      {{#if isLogin}}
-      <li class="active"><a href="/auth/login#login">Login</a></li>
-      {{else}}
-      <li><a href="/auth/login#login">Login</a></li>
-      {{/if}}
-      {{/if}}
+      </div>
     </ul>
   </div>
 </nav>

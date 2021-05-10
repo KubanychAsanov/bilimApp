@@ -1,7 +1,7 @@
-<h3>Profile</h3>
+<h4>Profile</h4>
 
-<div class="row">
-  <div class="col s6">
+<div class="row profile-page" style="justify-content: space-between;">
+  <div class="profile-avatar">
     {{#if user.avatarUrl}}
     <img class="avatar" src="/{{user.avatarUrl}}" alt="avatar-{{user.name}}">
     {{else}}
@@ -11,7 +11,7 @@
 
   </div>
 
-  <div class="col s6">
+  <div class="profile-form">
     <form action="/profile" method="POST" enctype="multipart/form-data">
       <p>Email: <strong>{{ user.email }}</strong></p>
 
