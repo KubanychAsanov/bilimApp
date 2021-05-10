@@ -44,7 +44,6 @@ To access swagger API doc click -->  <a href ="https://bilimapp.herokuapp.com/ap
 | userId      | objectId| auto..|
 | dateAdded   | Date    | auto..|
 └─────────────┴─────────┴───────┘
-...
 ```
 ### Users
 ```
@@ -58,7 +57,6 @@ To access swagger API doc click -->  <a href ="https://bilimapp.herokuapp.com/ap
 | userId      | objectId| auto..|
 | dateAdded   | Date    | auto..|
 └─────────────┴─────────┴───────┘
-...
 ```
 ## ‍👨‍💻 ‍Contacts...
 
